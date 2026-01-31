@@ -1,21 +1,23 @@
 #include "raylib.h"
 
-#define SCREEN_WIDTH  800
-#define SCREEN_HEIGHT 600
+#define FACTOR 1
 
-#define TOOL_BAR_HEIGHT 30
-#define COLOR_BOX_LENGTH 20
-#define BRUSH_BOX_LENGTH 6
+#define SCREEN_WIDTH  (FACTOR*800)
+#define SCREEN_HEIGHT (FACTOR*600)
 
-#define MAX_BRUSH_SIZE 60
-#define MIN_BRUSH_SIZE 2
+#define TOOL_BAR_HEIGHT  (FACTOR*30)
+#define COLOR_BOX_LENGTH (FACTOR*20)
+#define BRUSH_BOX_LENGTH (FACTOR*6)
 
-#define PALETTE_X_OFFSET 5
-#define PALETTE_Y_OFFSET (SCREEN_HEIGHT - TOOL_BAR_HEIGHT + 5)
-#define PALETTE_X_GAP 2
-#define PALETTE_SELECTED_OFFSET 2
+#define MAX_BRUSH_SIZE (FACTOR*60)
+#define MIN_BRUSH_SIZE (FACTOR*2)
 
-#define CANVAS_OFFSET 5
+#define PALETTE_X_OFFSET (FACTOR*5)
+#define PALETTE_Y_OFFSET (SCREEN_HEIGHT - TOOL_BAR_HEIGHT + 5*FACTOR)
+#define PALETTE_X_GAP (FACTOR*2)
+#define PALETTE_SELECTED_OFFSET (FACTOR*2)
+
+#define CANVAS_OFFSET (FACTOR*5)
 #define CANVAS_WIDTH (SCREEN_WIDTH - 2*CANVAS_OFFSET)
 #define CANVAS_HEIGHT (SCREEN_HEIGHT - TOOL_BAR_HEIGHT - 2*CANVAS_OFFSET)
 
@@ -33,7 +35,7 @@ static RenderTexture2D canvas;
 static Vector2 last_canvas_mouse_position, current_canvas_mouse_position;
 static bool is_first_frame = true;
 static float brush_size = 10.0f;
-static int brush_color_index = 0;
+static unsigned brush_color_index = 0;
 
 static void draw_tool_bar_to_screen(void) {
     int y_offset = PALETTE_Y_OFFSET;
@@ -57,7 +59,7 @@ static void draw_tool_bar_to_screen(void) {
     }
 
     // draw brush size
-    x_offset += 10;
+    x_offset += COLOR_BOX_LENGTH;
     y_offset += (COLOR_BOX_LENGTH - BRUSH_BOX_LENGTH) / 2;
     DrawRectangle(x_offset, y_offset, brush_size, BRUSH_BOX_LENGTH, RAYWHITE);
 }
