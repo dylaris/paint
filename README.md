@@ -2,7 +2,7 @@
 
 A simple paint impelemented in **RAYLIB**.
 
-[screenshot](./screenshot.png)
+![screenshot](./screenshot.png)
 
 ## Quick Start
 
