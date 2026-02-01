@@ -19,6 +19,11 @@ int main(int argc, char **argv)
 
     Cmd cmd = {0};
 
+#ifdef _WIN32
+    cmd_append(&cmd, "windres", "-o", "resource.o", "resource.rc");
+    if (!cmd_run(&cmd)) return 1;
+#endif
+
     cmd_append(&cmd, CC);
     cmd_append(&cmd, "-Wall", "-Wextra");
     cmd_append(&cmd, "-ggdb");
@@ -27,7 +32,8 @@ int main(int argc, char **argv)
 
     cmd_append(&cmd, RAYLIB_DIR"lib/libraylib.a");
 #ifdef _WIN32
-    cmd_append(&cmd, "-lgdi32", "-lwinmm", "-lmsvcrt", "-lucrtbase");
+    cmd_append(&cmd, "resource.o");
+    cmd_append(&cmd, "-lgdi32", "-lwinmm", "-lmsvcrt", "-lucrtbase", "-mwindows");
 #else
     cmd_append(&cmd, "-lm");
 #endif

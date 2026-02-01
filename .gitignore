@@ -1,6 +1,9 @@
 nob
 nob.old
 nob.exe
+nob.exe.old
+
+resource.o
 
 paint
 paint.exe
