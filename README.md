@@ -2,6 +2,8 @@
 
 A simple paint impelemented in **RAYLIB**.
 
+[screenshot](./screenshot.png)
+
 ## Quick Start
 
 ```console
