@@ -214,12 +214,10 @@ void tool_draw_stroke(Canvas *canvas, Tool_Context *ctx, Vector2 mouse_pos) {
 
     case TOOL_CLEAR:
         canvas_clear(canvas);
-        ctx->current_tool = TOOL_PEN;
         break;
 
     case TOOL_EXPORT:
         canvas_export(canvas);
-        ctx->current_tool = TOOL_PEN;
         break;
 
     default:

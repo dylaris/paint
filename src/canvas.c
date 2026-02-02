@@ -38,7 +38,7 @@ void canvas_draw(Canvas *canvas) {
 void canvas_export(Canvas *canvas) {
     static int output_times = 0;
     static char filename[128] = {0};
-    snprintf(filename, sizeof(filename), "output/%02d.png", output_times++);
+    snprintf(filename, sizeof(filename), "output-%02d.png", output_times++);
     Image image = LoadImageFromTexture(canvas->render_texture.texture);
     ExportImage(image, filename);
     UnloadImage(image);

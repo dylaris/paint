@@ -152,6 +152,11 @@ static void draw_tool_icons(Tool_Context *ctx) {
 }
 
 void ui_draw(Tool_Context *ctx) {
+    if (ctx->current_tool == TOOL_CLEAR ||
+        ctx->current_tool == TOOL_EXPORT) {
+        ctx->current_tool = TOOL_PEN;
+    }
+
     DrawRectangle(TOOL_BAR_X_OFFSET, TOOL_BAR_Y_OFFSET, TOOL_BAR_WIDTH, TOOL_BAR_HEIGHT, BACKGROUND_COLOR);
     draw_palette(ctx);
     draw_tool_icons(ctx);
