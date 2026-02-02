@@ -3,7 +3,9 @@ nob.old
 nob.exe
 nob.exe.old
 
-resource.o
+output/*
+
+src/resource.o
 
 paint
 paint.exe

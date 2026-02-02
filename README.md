@@ -11,3 +11,7 @@ $ gcc -o nob nob.c
 $ ./nob
 $ ./paint
 ```
+
+## TODO
+
+Please refer to the bottom of `src/main.c`.
