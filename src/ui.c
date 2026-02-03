@@ -25,8 +25,10 @@ void ui_context_init(void) {
     tool_icons[TOOL_CLEAR]          = LoadTexture("assets/clear.png");
     tool_icons[TOOL_FILL_RECTANGLE] = LoadTexture("assets/fill_rectangle.png");
     tool_icons[TOOL_FILL_CIRCLE]    = LoadTexture("assets/fill_circle.png");
+    // tool_icons[TOOL_FILL_TRIANGLE]  = LoadTexture("assets/fill_triangle.png");
     tool_icons[TOOL_LINE_RECTANGLE] = LoadTexture("assets/line_rectangle.png");
     tool_icons[TOOL_LINE_CIRCLE]    = LoadTexture("assets/line_circle.png");
+    // tool_icons[TOOL_LINE_TRIANGLE]  = LoadTexture("assets/line_triangle.png");
     tool_icons[TOOL_LINE]           = LoadTexture("assets/line.png");
     tool_icons[TOOL_CURVE]          = LoadTexture("assets/curve.png");
     tool_icons[TOOL_EXPORT]         = LoadTexture("assets/export.png");
@@ -152,11 +154,6 @@ static void draw_tool_icons(Tool_Context *ctx) {
 }
 
 void ui_draw(Tool_Context *ctx) {
-    if (ctx->current_tool == TOOL_CLEAR ||
-        ctx->current_tool == TOOL_EXPORT) {
-        ctx->current_tool = TOOL_PEN;
-    }
-
     DrawRectangle(TOOL_BAR_X_OFFSET, TOOL_BAR_Y_OFFSET, TOOL_BAR_WIDTH, TOOL_BAR_HEIGHT, BACKGROUND_COLOR);
     draw_palette(ctx);
     draw_tool_icons(ctx);
