@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
     cmd_append(&cmd, RAYLIB_DIR"lib/libraylib.a");
 #ifdef _WIN32
     cmd_append(&cmd, "src/resource.o");
-    cmd_append(&cmd, "-lgdi32", "-lwinmm", "-lmsvcrt", "-lucrtbase", "-mwindows");
+    cmd_append(&cmd, "-lgdi32", "-lwinmm", "-lmsvcrt", "-mwindows");
 #else
     cmd_append(&cmd, "-lm");
 #endif

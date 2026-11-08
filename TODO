@@ -1,0 +1,16 @@
+
+        1. Add operation history (undo/redo)
+        2. Resize the window and keep the layout
+                put all the ui components to another buffer so that the window is clean
+        3. Key binding
+                add help page
+        4. Add tab
+                workspace, like vim
+        5. Text input
+        6. Select the strokes
+                like a rectangle selection
+        7. Adjust the stroke
+                click it, and it will display some point that you can move to adjust the stroke
+        8. Config file
+                config the key bindings and palette and so on
+                hot reload
